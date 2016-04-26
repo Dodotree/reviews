@@ -468,6 +468,10 @@ var paginator = {
         /// could be validated
         paginator.noOfReviews = Number($('#noOfReviews-inp').val());
         paginator.offset = Number($('#offset-inp').val()); 
+        // Can be improved, tool bar is a temporary debugging tool.
+        if( Number($('.threshold li.active').text()) != requestVars.threshold ){
+             paginator.offset = 0;
+        }
         requestVars = {
            internal: Number($('.internal li.active').text()),
            yelp:  Number($('.yelp li.active').text()),
@@ -541,3 +545,5 @@ var paginator = {
 
 </body>
 </html>
+
+
